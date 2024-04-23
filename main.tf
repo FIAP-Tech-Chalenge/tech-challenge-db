@@ -23,23 +23,23 @@ resource "aws_security_group" "rds_sg" {
 }
 
 resource "aws_db_instance" "my_postgres_db" {
-  identifier           = "database-1" 
-  allocated_storage    = 20
-  storage_type         = "gp2"
-  engine               = "postgres"
-  engine_version       = "16"
-  instance_class       = "db.t3.micro"
-  username             = var.master_username
-  password             = var.db_password
-  db_subnet_group_name = "my-db-subnet-group"
+  identifier             = "database-1"
+  allocated_storage      = 20
+  storage_type           = "gp2"
+  engine                 = "postgres"
+  engine_version         = "16"
+  instance_class         = "db.t3.micro"
+  username               = var.master_username
+  password               = var.db_password
+  db_subnet_group_name   = "my-db-subnet-group"
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
-  multi_az             = false
-  availability_zone    = "us-east-1b"
-  port                 = 5432
+  multi_az          = false
+  availability_zone = "us-east-1b"
+  port              = 5432
 
   backup_retention_period = 1
-  skip_final_snapshot = true
+  skip_final_snapshot     = true
 
   tags = {
     Name = "MyPostgreSQLInstance"
