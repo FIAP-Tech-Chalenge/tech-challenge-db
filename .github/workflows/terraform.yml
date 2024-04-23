@@ -24,19 +24,19 @@ jobs:
 
       - name: Set up environment variables from secrets
         run: |
+          echo "TF_VAR_aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "TF_VAR_aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
           echo "TF_VAR_vpc_id=${{ secrets.VPC_ID }}" >> $GITHUB_ENV
           echo "TF_VAR_master_username=${{ secrets.MASTERUSERNAME }}" >> $GITHUB_ENV
           echo "TF_VAR_db_password=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
-          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
-          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
 
       - name: Check environment variables setup
         run: |
           echo "VPC ID set: ${{ env.TF_VAR_vpc_id }}"
           echo "Master username set: ${{ env.TF_VAR_master_username }}"
           echo "DB password set: ${{ env.TF_VAR_db_password }}"
-          echo "AWS Access Key set: ${{ env.AWS_ACCESS_KEY_ID }}"
-          echo "AWS Secret Key set: ${{ env.AWS_SECRET_ACCESS_KEY }}"
+          echo "AWS Access Key ID set: ${{ env.TF_VAR_aws_access_key_id }}"
+          echo "AWS Secret Access Key set: ${{ env.TF_VAR_aws_secret_access_key }}"
 
       - name: Terraform Init
         id: init
