@@ -1,3 +1,15 @@
+variable "aws_access_key_id" {
+  type        = string
+  description = "AWS access key ID"
+  sensitive   = true
+}
+
+variable "aws_secret_access_key" {
+  type        = string
+  description = "AWS secret access key"
+  sensitive   = true
+}
+
 variable "vpc_id" {
   type        = string
   description = "O ID da VPC onde os recursos serão criados."
@@ -17,4 +29,5 @@ variable "master_username" {
 variable "db_password" {
   type        = string
   description = "A senha do banco de dados."
+  sensitive   = true
 }
