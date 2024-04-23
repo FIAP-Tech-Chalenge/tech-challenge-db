@@ -8,3 +8,13 @@ variable "access_cidr_block" {
   description = "CIDR block permitido para acesso ao RDS."
   default     = "0.0.0.0/0"
 }
+
+variable "master_username" {
+  type        = string
+  description = "O nome de usuário administrador do banco de dados."
+}
+
+variable "db_password" {
+  type        = string
+  description = "A senha do banco de dados."
+}
