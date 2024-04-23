@@ -29,7 +29,6 @@ resource "aws_db_instance" "my_postgres_db" {
   engine               = "postgres"
   engine_version       = "16"
   instance_class       = "db.t3.micro"
-  name                 = "mydatabase"
   username             = var.master_username
   password             = var.db_password
   db_subnet_group_name = "my-db-subnet-group"
