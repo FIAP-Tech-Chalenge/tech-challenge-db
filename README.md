@@ -35,3 +35,7 @@ A hospedagem do PostgreSQL na Amazon RDS foi escolhida devido a seus múltiplos 
 ## Conclusão
 
 A combinação de PostgreSQL com Amazon RDS fornece uma base de dados poderosa e flexível para nosso sistema, capaz de suportar altas demandas e expansão contínua do negócio. Esta infraestrutura não apenas atende às necessidades imediatas de gerenciamento eficiente de pedidos mas também é escalável para acompanhar o crescimento futuro, melhorando significativamente a eficiência operacional e a satisfação do cliente.
+
+## Diagrama de Entidade-Relacionamento
+![Descrição da imagem](images/diagram.png)
+
