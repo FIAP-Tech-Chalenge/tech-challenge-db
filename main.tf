@@ -1,6 +1,6 @@
 resource "aws_security_group" "rds_sg" {
   name        = "rds-security-group"
-  description = "Grupo de segurança do RDS"
+  description = "Grupo de seguranca do RDS"
   vpc_id      = var.vpc_id
 
   ingress {
