@@ -10,6 +10,12 @@ variable "aws_secret_access_key" {
   sensitive   = true
 }
 
+variable "aws_session_token" {
+  type        = string
+  description = "AWS session token"
+  sensitive   = true
+}
+
 variable "vpc_id" {
   type        = string
   description = "O ID da VPC onde os recursos serão criados."
