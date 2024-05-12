@@ -41,6 +41,11 @@ jobs:
         id: init
         run: terraform init -input=false
 
+      - name: Import existing security group if necessary
+        id: import-sg
+        run: terraform import aws_security_group.rds_sg sg-060b8f27359198a26 || echo "Security group already managed by Terraform"
+        continue-on-error: true
+
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
