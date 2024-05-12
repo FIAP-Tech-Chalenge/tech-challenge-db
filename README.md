@@ -1,4 +1,4 @@
-Este documento justifica a escolha do banco de dados PostgreSQL na Amazon RDS como a solução de armazenamento de dados ideal para o sistema!
+Este documento justifica a escolha do banco de dados PostgreSQL na Amazon RDS como a solução de armazenamento de dados ideal para o sistema.
 
 ## Escolha do Banco de Dados
 
