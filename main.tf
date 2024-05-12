@@ -34,11 +34,11 @@ resource "aws_db_instance" "my_postgres_db" {
   db_subnet_group_name   = "default-vpc-00fbcda6637a258e4"
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
-  multi_az               = false
-  availability_zone      = "us-east-1b"
-  port                   = 5432
-  db_name                = "techchallenge"
-  publicly_accessible    = true
+  multi_az            = false
+  availability_zone   = "us-east-1b"
+  port                = 5432
+  db_name             = "techchallenge"
+  publicly_accessible = true
 
   backup_retention_period = 0
   skip_final_snapshot     = true
