@@ -31,7 +31,7 @@ resource "aws_db_instance" "my_postgres_db" {
   instance_class         = "db.t3.micro"
   username               = var.master_username
   password               = var.db_password
-  db_subnet_group_name   = "default-vpc-00fbcda6637a258e4"
+  db_subnet_group_name   = "default-vpc-09464c1425a3ab39d"
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
   multi_az            = false
