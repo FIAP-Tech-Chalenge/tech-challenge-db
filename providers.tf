@@ -1,5 +1,8 @@
 provider "aws" {
   region     = "us-east-1"
-  access_key = var.aws_access_key_id
-  secret_key = var.aws_secret_access_key
+
+  assume_role {
+    role_arn     = "arn:aws:iam::135488045194:role/voclabs/user3240016=business.mwtelles@gmail.com"
+    session_name = "TerraformSession"
+  }
 }
