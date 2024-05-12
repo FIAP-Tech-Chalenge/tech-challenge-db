@@ -49,13 +49,5 @@ jobs:
         run: terraform plan -input=false
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          plan_output=$(terraform plan -input=false -detailed-exitcode)
-          echo "$plan_output"
-          if [[ $plan_output == *'Plan: 0 to add, 0 to change, 0 to destroy.'* ]]; then
-            echo "No changes are needed"
-          else
-            echo "Applying changes"
-            terraform apply -auto-approve
-          fi
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: terraform apply -auto-approve
